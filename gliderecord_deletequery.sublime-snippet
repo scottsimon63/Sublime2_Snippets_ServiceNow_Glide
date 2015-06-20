@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+		
+var grec = new GlideRecord('${1:tablename}');
+
+grec.addQuery('${2:field}','${3:value}');
+grec.query();
+
+while (grec.next()) {
+	gs.print('Record ' + grec.number + ' deleted');
+	rec.deleteRecord();
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>grx</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Delete Query</description>
+</snippet>

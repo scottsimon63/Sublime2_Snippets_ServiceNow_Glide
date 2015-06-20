@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+// Glide Server has role
+
+if(gs.hasRole('itil')){
+	//If Itil, Do something... 
+}
+
+if(gs.hasRole('admin')){
+	//If admin, Do something... 
+}
+
+if(gs.hasRole('itil,admin')){
+	//If user has 'itil' OR 'admin' role then Do something...
+}
+
+if(!gs.getUser().hasRoles()){
+	//User is an ess user...
+}
+
+
+]]></content>
+	<tabTrigger>gsr</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideServer User Role</description>
+</snippet>

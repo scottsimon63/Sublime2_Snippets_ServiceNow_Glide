@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+try {
+	var grec = new GlideRecord('${1:tablename}');
+	grec.addActiveQuery();
+	grec.query();
+
+	while (grec.next()) {
+	   var ${2:variable} = grec.${3:field};
+	}
+}
+catch (err) {
+	gs.addInfoMessage("Glide Record Active Query Error: " + err)	
+}	
+]]></content>
+	<tabTrigger>gra</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Active Query</description>
+</snippet>

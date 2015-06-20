@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+
+jslog("${1:JavaScript Client Debugging}");
+alert("${1:popup message}");
+
+]]></content>
+	<tabTrigger>gcl</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideClient Javascript Log</description>
+</snippet>

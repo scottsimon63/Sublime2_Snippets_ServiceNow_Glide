@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+
+var count = new GlideAggregate('${1:tablename}');
+count.addQuery('${2:field}','${3:value}');
+count.addAggregate('COUNT');
+count.query();
+
+if (count.next()) {
+   var ${4:variable} = count.getAggregate('COUNT');
+}
+
+]]></content>
+	<tabTrigger>grag</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Record Aggregate</description>
+</snippet>

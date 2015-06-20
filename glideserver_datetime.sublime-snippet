@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+
+//Glide Date Time Client Script
+var ajax = new GlideAjax('DateTimeUtils');
+ajax.addParam('sysparm_name', 'getDate');
+ajax.getXML(getDate);
+	
+function getDate(response) {
+	var answer = response.responseXML.documentElement.getAttribute("answer");
+}
+
+//Glide Date Time Server Script
+getDate: function () {
+	var dt = gs.nowDateTime();
+	var gdt = new GlideDateTime(dt);
+
+	return gdt;
+}
+
+
+]]></content>
+	<tabTrigger>gdt</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Date Time</description>
+</snippet>

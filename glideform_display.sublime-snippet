@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+
+/* Flashes the specified color the specified number of times in the field. Used to draw attention to a particular field.*/
+g_form.flash("$1{incident.number}", "#FFFACD", 0);
+
+// Modify Form Label
+if (g_user.hasRole('itil')) {
+    var oldLabel = g_form.getLabelOf('comments');
+    g_form.setLabelOf('comments', oldLabel + ' (Customer visible)');
+}
+
+//Decoration - adds an icon on field's label
+g_form.removeDecoration('caller_id', 'icon-star', 'VIP');
+g_form.addDecoration('caller_id', 'icon-star', 'VIP');
+
+// showFieldMsg - displays informational or error message
+g_form.showFieldMsg('impact','Low impact response time can be one week','info');
+
+
+
+]]></content>
+	<tabTrigger>gfs</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideForm Display Samples</description>
+</snippet>

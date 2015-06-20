@@ -1,0 +1,45 @@
+<snippet>
+	<content><![CDATA[
+		try {
+			g_form.getValue('${1:slushbucketvariablename}');
+			//create option and add to right select box
+			var varName = '${1:slushbucketvariablename}';
+			var leftBucket = gel(varName + '_select_0');
+			var rightBucket = gel(varName + '_select_1');
+			
+			//populate right bucket into array object
+			var selectedOptions = rightBucket.options;		
+			var selectedIDs = new Array();
+			var index = 0;
+			for(var i = 0; i < selectedOptions.length; i++){
+			   selectedIDs[index] = i;
+			   index++;
+			}
+			
+			//Move all returned options from right to left bucket and sort results
+			//Switch 'rightBucket' and 'leftBucket' to move from left to right
+			moveSelectedOptions(selectedIDs, rightBucket, leftBucket, '--None--');
+			
+			//Sort the resultant options in the left bucket			
+			sortSelect(leftBucket);
+
+			//clear right bucket
+			rightBucket.options.length = 0;		
+			
+			//add request for variable into right bucket
+			var newOption = document.createElement("option");
+			newOption.text = newName;
+			newOption.value = g_form.getValue('requested_for');
+			rightBucket.add(newOption);
+			
+			// sort right bucket and refresh slushbucket
+			sortSelect(rightBucket);
+			${1:slushbucketvariablename}acRequest(null);
+		}catch(err){
+			alert("slushbucket error: " + err);
+		}
+]]></content>
+	<tabTrigger>gfsb</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideForm Slushbucket</description>
+</snippet>

@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+
+//Glide Ajax Client
+var gajax = new GlideAjax('${1:script_include_name}');
+gajax.addParam('sysparm_name', '${2:function_name}');
+gajax.addParam('sysparm_${3:sysparm_name}', '${4:sysparm_value}' );
+gajax.getXML(ajax_response);
+
+function ajax_response(response) {
+	var answer = response.responseXML.documentElement.getAttribute("answer");
+}
+
+]]></content>
+	<tabTrigger>gac</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Ajax Client</description>
+</snippet>

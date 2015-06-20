@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+
+g_form.getValue('variables.${1:variablename}');
+
+]]></content>
+	<tabTrigger>gfgv</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideForm Get Value</description>
+</snippet>

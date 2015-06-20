@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+
+g_form.setDisplay('variables.${1}', true);
+g_form.setDisplay('variables.${1}', false);
+
+]]></content>
+	<tabTrigger>gfd</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideForm Set Display</description>
+</snippet>

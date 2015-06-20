@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+
+//Add Option
+g_form.addOption('priority', '6', '6 - Really Low');
+
+// add option in position 3
+g_form.addOption('priority', '2.5', '2.5 - Moderately High', 3);
+
+// Remove Option
+g_form.removeOption('priority', '1');
+
+// Clear Options
+clearOptions('priority')
+
+]]></content>
+	<tabTrigger>gfo</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideClient Options</description>
+</snippet>

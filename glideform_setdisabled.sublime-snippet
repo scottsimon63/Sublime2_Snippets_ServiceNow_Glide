@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+
+g_form.setDisabled('variables.${1}', true);
+g_form.setDisabled('variables.${1}', false);
+
+
+]]></content>
+	<tabTrigger>gfdd</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideForm Set Disabled</description>
+</snippet>

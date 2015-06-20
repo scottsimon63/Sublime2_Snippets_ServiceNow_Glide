@@ -1,0 +1,23 @@
+<snippet>
+	<content><![CDATA[
+
+try {
+	var grec = new GlideRecord('${1:tablename}');
+	grec.addJoinQuery('${2:jointable}','{$3:jointfield}','$4{tablefield}');
+	grec.addQuery('${5:fieldname}',${6:value})
+	grec.query();
+
+	while (grec.next()) {
+	   var ${7:variable} = grec.${8:field};
+	}
+}
+catch (err) {
+	gs.addInfoMessage("Glide Record Join Error: " + err)	
+}	
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>grj</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Join Query</description>
+</snippet>

@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+
+// doAlert is our callback function
+var caller = g_form.getReference('caller_id', doAlert); 
+
+function doAlert(caller) { //reference is passed into callback as 
+  if (caller.vip == 'true')
+    alert('Caller is a VIP!');
+}
+
+
+]]></content>
+	<tabTrigger>gfr</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideForm Get Reference</description>
+</snippet>

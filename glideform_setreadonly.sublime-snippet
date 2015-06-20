@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+
+g_form.setReadOnly('variables.${1}', true);
+g_form.setReadOnly('variables.${1}', false);
+
+
+]]></content>
+	<tabTrigger>gfro</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideForm Set ReadOnly</description>
+</snippet>

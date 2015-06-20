@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+
+try {
+	var domain = new GlideRecord('${1:domaintable}');
+	domain.addQuery('${2:domainfield}', '${3:domainvalue}');
+	domain.queryNoDomain();
+	if (domain.next()) {		
+		var domainQuery = new GlideRecord('${4:tablename}');
+		domainQuery.addQuery('${5:field}','${6:value}');
+	    domainQuery.addDomainQuery(domain);
+	    domainQuery.query();
+
+		while (domainQuery.next()) {
+		   var ${7:variable} = grec.${8:field};
+		}
+	}
+}
+catch (err) {
+	gs.addInfoMessage("Glide Record Domain Error: " + err)	
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>grd</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Domain Query</description>
+</snippet>

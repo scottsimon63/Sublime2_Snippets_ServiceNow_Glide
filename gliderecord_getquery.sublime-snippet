@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+
+try {		
+	var grec = new GlideRecord('${1:tablename}');
+
+	if (grec.get('${2:sys_id}')) {
+	   var ${3:variable} = grec.${4:field};
+	}
+
+}
+catch (err) {
+	gs.addInfoMessage("Glide Record Get Error: " + err)	
+}	
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>grg</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Record Get</description>
+</snippet>

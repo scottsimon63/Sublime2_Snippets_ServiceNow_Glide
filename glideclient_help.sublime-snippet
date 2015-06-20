@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+
+var control = g_form.getControl('variables.${1:.name}');
+toggleHelp(control.id);
+
+]]></content>
+	<tabTrigger>gch</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideClient Help</description>
+</snippet>

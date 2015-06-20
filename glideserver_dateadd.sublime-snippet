@@ -1,0 +1,46 @@
+<snippet>
+	<content><![CDATA[
+
+//Glide Date Time Client Script
+if (g_form.getValue('variables.${5:due_date}') == '') {
+	var ajax = new GlideAjax('${1:DateTimeUtils}');
+	ajax.addParam('sysparm_name', '${2:dateAddDays}');
+	ajax.addParam('sysparm_days', '${3:4}' );
+	ajax.addParam('sysparm_weekends', '${4:1}' );
+	ajax.getXML(addDays);
+		
+	function addDays(response) {
+		var answer = response.responseXML.documentElement.getAttribute("answer");
+		g_form.setValue('variables.${5:due_date}', answer);
+	}
+}
+
+
+//Glide Date Time Server Script
+$2{:dateAddDays}: function () {
+      var dt = gs.nowDateTime();
+      var days = this.getParameter('sysparm_days');
+      var include_weekends = this.getParameter('sysparm_weekends');
+      var temp = new GlideDateTime(dt);
+      var gdt = new GlideDateTime(dt);
+      gdt.addDays(days);  
+	  
+      if (include_weekends == '1') {
+		while (temp.toString() != gdt.toString()) {
+			 // if adding days lands on Saturday on Sun, add an extra day	
+			 if (temp.getDayOfWeek() == 6 || temp.getDayOfWeek() == 7) {
+				gdt.addDays(1);
+			 }
+			 temp.addDays(1);
+         }
+      }
+	   
+      return gdt;
+ }
+
+
+]]></content>
+	<tabTrigger>gda</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Date Add</description>
+</snippet>

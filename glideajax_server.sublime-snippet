@@ -1,0 +1,23 @@
+<snippet>
+	<content><![CDATA[
+
+//Glide Ajax Server
+var ${1:script_include_name} = Class.create();
+
+${1:script_include_name}.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+   
+	 ${2:function_name} : function() {
+	      var parmvalue = this.getParameter('{3:sysparm_name}');
+	      var answer = '';
+	      
+	      // Server Side Code
+
+	      return answer;
+	 }
+});
+
+]]></content>
+	<tabTrigger>gas</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Ajax Server</description>
+</snippet>

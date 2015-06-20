@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+
+g_form.addErrorMessage('${1:This is an error}');
+g_form.addInfoMessage('${1:This is an information message});
+
+]]></content>
+	<tabTrigger>gfmg</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideForm Message</description>
+</snippet>

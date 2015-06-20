@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+
+try {		
+	var grec = new GlideRecord('${1:tablename}');
+	grec.addQuery('${2:field}','${3:operator}', '${4:value}');
+	grec.query();
+
+	while (grec.next()) {
+	   var ${5:variable} = grec.${6:field};
+	}
+}
+catch (err) {
+	gs.addInfoMessage("Glide Record Operator Error: " + err)	
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>gro</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Record Operator</description>
+</snippet>

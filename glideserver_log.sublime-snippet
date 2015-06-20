@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+
+// Glide Server Log Messages
+
+gs.addInfoMessage("Email address added for notification");
+gs.log("${1:LSS Log Message}");
+gs.log("${1:LSS Error Message}", "Source");
+gs.print("${1:background script message}");
+
+]]></content>
+	<tabTrigger>gsl</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideServer Log</description>
+</snippet>

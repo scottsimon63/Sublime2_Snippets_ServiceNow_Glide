@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+
+g_form.setValue('variables.${1:variablename}', '${2:value}');
+
+]]></content>
+	<tabTrigger>gfsv</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideForm Set Value</description>
+</snippet>

@@ -1,0 +1,34 @@
+<snippet>
+	<content><![CDATA[
+
+// Glide Record Query
+// 1 = table name
+// 2 = field name
+// 3 = search value
+// 4 = order by field
+// 5 = variable name
+
+try {
+	var grec = new GlideRecord('${1:incident}');
+
+	grec.addQuery('${2:category}','${3:Software}');
+	grec.setLimit('10');
+	grec.query();
+	grec.orderBy(${4:number});
+
+	while (grec.next()) {
+	   var ${5:number} = grec.${4:number};	
+	}
+}
+catch (err) {
+	gs.addInfoMessage("Glide Record Error: " + err)	
+}	
+		
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>grq</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Record Query</description>
+</snippet>

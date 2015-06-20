@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+
+try {
+	var grec = new GlideRecord('${1:tablename}');
+	grec.addInactiveQuery();
+	grec.query();
+
+	while (grec.next()) {
+	   var ${2:variable} = grec.${3:field};
+	}
+}
+catch (err) {
+	gs.addInfoMessage("Glide Record Inactive Error: " + err)	
+}	
+
+]]></content>
+	<tabTrigger>gri</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Inactive Query</description>
+</snippet>

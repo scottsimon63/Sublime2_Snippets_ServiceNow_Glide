@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+
+/* True if the current user has the role specified, false otherwise. ALWAYS returns true if the user has the 'admin' role. */
+g_user.hasRole('itil');
+
+/* True if the current user has the exact role specified, false otherwise, regardless of 'admin' role. */
+g_user.hasRoleExactly('itil');
+
+/* True if the current user has at least one role specified, false otherwise. */
+g_user.hasRoles('itil','admin');
+
+
+
+]]></content>
+	<tabTrigger>gcr</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideClient Role</description>
+</snippet>

@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+/*
+ * This replicates the outline of the User object for help in autocompletion.
+ * http://wiki.service-now.com/index.php?title=Getting_a_User_Object
+ * http://wiki.service-now.com/index.php?title=The_g_user_Object
+ * http://www.servicenowguru.com/scripting/user-object-cheat-sheet/
+*/
+
+var userObject = gs.getUser();
+var user_name = gs.getUserName();
+var user_Display = gs.getUserDisplayName();
+var user_id = gs.getUser().getUserByID('employee');
+var firstName = gs.getUser().getFirstName();
+var lastName = gs.getUser().getLastName();
+var email = gs.getUser().getEmail();
+var deptID = gs.getUser().getDepartmentID();
+var companyID = gs.getUser().getCompanyID();
+var language = gs.getUser().getLanguage();
+var location = gs.getUser().getLocation();
+var domainID = gs.getUser().getDomainID();
+var managerID = gs.getUser().getManagerID();
+var groups = gs.getUser().getMyGroups();
+
+]]></content>
+	<tabTrigger>gsu</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideServer User</description>
+</snippet>

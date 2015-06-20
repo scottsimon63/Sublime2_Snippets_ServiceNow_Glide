@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+
+// Glide Server Member takes either a group sys_id or a group name as an argument.
+
+if(gs.getUser().isMemberOf(current.assignment_group)){
+	//Do something...
+}
+
+var isMember = gs.getUser().isMemberOf('${1:Hardware}');
+
+// Check User Not logged in Member of a Group
+var gr = new GlideRecord("sys_user");
+gr.addQuery("user_name", "admin");
+gr.query();
+gr.next();
+var group = "${1:Hardware}";
+
+if (gs.getUser().getUserByID('admin').isMemberOf(group) ) {
+	gs.log( gr.user_name + " is a member of " + group);
+}
+
+else{
+	gs.log( gr.user_name + " is NOT a member of " + group);
+}
+
+]]></content>
+	<tabTrigger>gsm</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideServer Member</description>
+</snippet>

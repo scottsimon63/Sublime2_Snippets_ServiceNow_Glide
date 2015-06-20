@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+
+// Server Side Encoded Query
+try {
+	var result='';
+	var query_parm = this.getParameter('sysparm_query');
+	
+	// example: query_parm = stateIN1,2,3,4
+	var query = query_parm; 
+
+	var grec = new GlideRecord('${1:tablename}');
+	grec.addEncodedQuery(query);
+	grec.query();
+	
+	while (grec.next()) {
+		result += grec.${2:fieldname} + '\n';
+	}
+}
+catch (err) {
+	gs.addInfoMessage("Glide Record Encoded Error: " + err)	
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>gre</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Encoded Query</description>
+</snippet>

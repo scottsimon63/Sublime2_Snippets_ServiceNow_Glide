@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+
+var user_name = g_user.userName;
+var user_firstname = g_user.firstName;
+var user_lastname = g_user.lastName;
+var user_id = g_user.userID;
+
+]]></content>
+	<tabTrigger>gcu</tabTrigger>
+	<scope>source.js</scope>
+	<description>GlideClient User</description>
+</snippet>

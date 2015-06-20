@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+		
+var grec = new GlideRecord('${1:tablename}');
+grec.addQuery('${2:field}','${3:value}');
+grec.addOrCondition('${4:field}','${5:value}'));
+grec.query();
+
+while (grec.next()) {
+   var ${6:variable} = grec.${7:field};
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>grc</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Conditional Query</description>
+</snippet>

@@ -1,0 +1,52 @@
+<snippet>
+	<content><![CDATA[
+
+//Glide Ajax Client Array
+function onLoad() {
+	var userid = g_user.userID;
+	var ajaxUserInfo = new GlideAjax('${1:ajaxRequestInfo}');
+		ajaxUserInfo.addParam('sysparm_name', '${2:getRequestInfo}');
+		ajaxUserInfo.addParam('sysparm_request', ${3:userid});
+		ajaxUserInfo.getXML(setRequestInfo);
+}
+	
+function setRequestInfo(response) {
+	var answer = response.responseXML.getElementsByTagName("result");
+	var email = answer[0].getAttribute("email");
+	var userid = answer[0].getAttribute("userid");
+	var phone = answer[0].getAttribute("phone");
+	var name = answer[0].getAttribute("name");
+	var department = answer[0].getAttribute("department");
+
+	g_form.setValue('variables.requestby_email',email);
+	g_form.setValue('variables.requestby_userid',userid);
+	g_form.setValue('variables.requestby_phone',phone);
+	g_form.setValue('variables.requestby_name',name);
+	g_form.setValue('variables.requestby_department', department); 
+}
+
+//Glide Ajax Server Array
+var ${1:ajaxRequestInfo} = Class.create();
+${1:ajaxRequestInfo}.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+
+	${2:getRequestInfo}: function() {
+		var result = this.newItem("result");
+		var userID = this.getParameter("sysparm_request");
+		var gr = new GlideRecord("sys_user");
+		
+		if (gr.get(userID)) {
+			result.setAttribute("email", gr.email);
+			result.setAttribute("userid", gr.user_name);
+			result.setAttribute("phone", gr.phone);
+			result.setAttribute("name", gr.name);
+			result.setAttribute("department", gr.department);
+		    result.setAttribute("building", gr.building);
+		}
+	}
+});
+
+]]></content>
+	<tabTrigger>gaa</tabTrigger>
+	<scope>source.js</scope>
+	<description>Glide Ajax Array</description>
+</snippet>
